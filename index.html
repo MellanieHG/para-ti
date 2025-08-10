@@ -126,7 +126,14 @@
 
   .et2-texto{ max-width:740px; line-height:1.6 }
   .et2-titulo{ font-family:"Dancing Script", cursive; font-size:clamp(32px,6vw,64px); margin-bottom:10px }
-  .et2-historia{ color:var(--muted); font-size:clamp(14px,3.5vw,18px); margin-bottom:18px }
+  .et2-historia{ color:var(--muted); font-size:clamp(14px,3.5vw,18px); margin-bottom:12px }
+
+  /* Link a la canción */
+  .song-link{ margin: 6px 0 18px; }
+  .song-link a{
+    color:#fff; text-decoration:underline; text-underline-offset:4px;
+  }
+  .song-link a:hover{ opacity:.9; }
 
   .cielo{
     width: clamp(260px, 80vw, 420px); aspect-ratio:1/1.2;
@@ -141,7 +148,7 @@
   .teamo{ width: clamp(280px, 92vw, 820px); height:auto }
   .teamo text{
     font-family:'Dancing Script', cursive;
-    font-size:clamp(68px, 20vw, 160px);
+    font-size:clamp(38px, 8vw, 90px);
     fill:none; stroke:#fff; stroke-width:2.2; stroke-dasharray:1800; stroke-dashoffset:1800;
     animation: drawText 4s ease forwards .2s, glow 3s ease-in-out infinite 4.6s;
   }
@@ -404,12 +411,16 @@ function initStars(){
         <div class="et2-texto">
           <h2 class="et2-titulo">Si, es nuestra primera amanecida.</h2>
           <p class="et2-historia">
-   Teníamos poco de habernos conocido y, en esa amanecida, entendimos mucho de las dos. 
-   Caminamos sin prisa entre bares y locales de comida rápida, 
-   bajo un cielo sin estrellas y con el murmullo de la ciudad de fondo. Hablamos de lo cotidiano y lo importante; 
-   reímos, trazamos planes cortos y dejamos que el tiempo fluyera. Sin grandes cosas: solo tú y yo, con hambre, 
-   sueño y ganas de quedarnos. En ese rato sentí cómo el cariño crecía y la confianza encontraba su lugar. 
-   Por eso quedó entre mis recuerdos preferidos. Espero que sigamos viviendo nuestra vida, haciendo locuras y manteniendo nuestras almas jóvenes.
+            Teníamos poquito tiempo de conocernos, y creo que en esa amanecida aprendimos mucho de nosotras.
+            Fue un momento super bonito, solo nosotras en la oscuridad, en locales de comida rápida,
+            bajo la noche (sin estrellas), pero queriéndonos y afianzando nuestra confianza cada día mas.
+            Este recuerdo es uno de mis favoritos. Espero que algún día, sigamos teniendo más anécdotas como estas.
+            Viviendo nuestra vida, creando más momentos, pero juntas. Te amo mucho.
+          </p>
+          <p class="song-link">
+            <a href="https://open.spotify.com/track/75MYJAzvo8Hap34pLkpQj3?si=B4LJqMjKQgKQuatazIinEA" target="_blank" rel="noopener noreferrer">
+              así me sentía, como esta canción
+            </a>
           </p>
           <svg class="teamo" viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Te amo mucho dibujado">
             <text x="50%" y="60%" text-anchor="middle">Te amo mucho</text>
@@ -491,9 +502,8 @@ function initStars(){
   })();
 </script>
 
-<!-- ========== OVERRIDES PEDIDOS: silueta más arriba + “Te amo mucho” más grande ========== -->
+<!-- ========== OVERRIDES: silueta más arriba + “Te amo mucho” más grande ========== -->
 <style>
-  /* Sube la silueta del primer SVG */
   .one-line{
     bottom: max(24px, calc(18svh + env(safe-area-inset-bottom, 0px))) !important;
   }
@@ -502,7 +512,6 @@ function initStars(){
       bottom: max(32px, calc(14svh + env(safe-area-inset-bottom, 0px))) !important;
     }
   }
-  /* “Te amo mucho” MÁS GRANDE */
   #etapa2 .teamo{ width: clamp(360px, 98vw, 1200px) !important; }
   #etapa2 .teamo text{
     font-size: clamp(68px, 15vw, 160px) !important;
